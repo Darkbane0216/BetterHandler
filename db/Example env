@@ -1,0 +1,3 @@
+# .env
+DISCORD_TOKEN=InputTokenHere
+DISCORD_GUILD=InputServerHere
