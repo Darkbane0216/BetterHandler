@@ -6,10 +6,10 @@ A Monster Hunter Discord bot
 A database containing all monsters informations for MHW and MH: Rise. The base World database JSON is from here.
 https://docs.mhw-db.com/
 
-### Neryss/mh_bot
-Updated database JSONs were used from their project(https://github.com/Neryss/monster_hunter_db)
+### [Neryss](https://github.com/Neryss)
+Updated database JSONs were used from his project(https://github.com/Neryss/monster_hunter_db)
 
-They put a lot of work into updating World, and creating Rise, so a huge shoutout is in order.
+He put a lot of work into updating the World JSON, and creating the Rise JSON, so a huge shoutout is in order.
 
 I will be updating the databases in future updates, but all of the current information came from here.
 
