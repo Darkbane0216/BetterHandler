@@ -23,6 +23,7 @@ To use the bot, create a .env file and use the provided template by inserting yo
 ### Authorizations needed are:
 
 Read/Edit/Send messages
+
 Embeds
 
 ### Currently the commands are:
