@@ -32,7 +32,11 @@ def format_weaknesses(weaknesses):
 def format_resistances(resistances):
     formatted_resistances = []
     for resistance in resistances:
-        formatted_resistances.append(f"{resistance['element'].upper()}")
+        condition = resistance.get("condition", "")
+        if condition:
+            formatted_resistances.append(f"{resistance['element'].upper()} ({condition})")
+        else:
+            formatted_resistances.append(f"{resistance['element'].upper()}")
     return " \n ".join(formatted_resistances)
 
 

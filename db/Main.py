@@ -20,7 +20,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 # Initialize bot with command prefix and intents
-bot = commands.Bot(command_prefix='!', intents=intents, help_command=None)
+bot = commands.Bot(command_prefix='!', intents=intents, help_command=None, case_insensitive=True)
 
 # Load JSON data from files
 world_data = load_world_data('mhw_db.json')
@@ -95,7 +95,6 @@ async def world_search(ctx, *, name_to_search: str):
 async def display_world_monster_info(ctx, result):
     embed = discord.Embed(title=f"{result['name']}  |  {result['type'].title()}  |  {result['species'].title()}",
                           color=discord.Color.red())
-    # embed.add_field(name="Species", value=result['species'].upper(), inline=True)
 
     # Add weaknesses if there are any
     if result['weaknesses']:
@@ -106,7 +105,7 @@ async def display_world_monster_info(ctx, result):
 
     # Add resistances if there are any
     if result['resistances']:
-        embed.add_field(name="Resistances:", value=result['resistances'].upper(), inline=True)
+        embed.add_field(name="Resistances:", value=result['resistances'], inline=True)
 
     if isinstance(ctx, discord.Interaction):
         await ctx.response.send_message(embed=embed)
@@ -166,7 +165,7 @@ async def display_rise_monster_info(ctx, result):
 
     # Add resistances if there are any
     if result['resistances']:
-        embed.add_field(name="Resistances:", value=result['resistances'].upper(), inline=True)
+        embed.add_field(name="Resistances:", value=result['resistances'], inline=True)
 
     if isinstance(ctx, discord.Interaction):
         # noinspection PyUnresolvedReferences
