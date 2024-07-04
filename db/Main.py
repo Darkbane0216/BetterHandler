@@ -154,7 +154,8 @@ async def rise_search(ctx, *, name_to_search: str):
 
 # Function to display Rise monster info
 async def display_rise_monster_info(ctx, result):
-    embed = discord.Embed(title=result['name'], color=discord.Color.blue())
+    embed = discord.Embed(title=f"{result['name']}  |  {result['species'].title()}",
+                          color=discord.Color.blue())
 
     # Add weaknesses if there are any
     if result['weaknesses']:

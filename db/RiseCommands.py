@@ -32,7 +32,11 @@ def format_weaknesses(weaknesses):
 def format_resistances(resistances):
     formatted_resistances = []
     for resistance in resistances:
-        formatted_resistances.append(f"{resistance['element'].upper()}")
+        condition = resistance.get("condition", "")
+        if condition:
+            formatted_resistances.append(f"{resistance['element'].upper()} ({condition})")
+        else:
+            formatted_resistances.append(f"{resistance['element'].upper()}")
     return " \n ".join(formatted_resistances)
 
 
@@ -42,6 +46,7 @@ def search_rise_db(name, data):
         if name.lower() in monster.get("name", "").lower():
             formatted_monster = {
                 "name": monster.get("name", "N/A"),
+                "species": monster.get("species", "N/A"),
                 "weaknesses": format_weaknesses(monster.get("weaknesses", [])),
                 "resistances": format_resistances(monster.get("resistances", []))
             }
